@@ -1,4 +1,4 @@
-FROM sagemath/sagemath:10.2
+FROM docker.io/sagemath/sagemath:10.2
 ARG timezone=Europe/Brussels
 
 ENV TERM xterm-256color
