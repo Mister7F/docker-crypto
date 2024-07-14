@@ -9,7 +9,7 @@ load("castryck_decru_shortcut.sage")
 # fmt: off
 (
     E_start0, E_start1, E_start2, E_start3, E_start4,
-    a, b,
+    f, a, b,
     EB0, EB0i, EB1, EB1i, EB2, EB2i, EB3, EB3i, EB4, EB4i,
     Pax0, Pax1, Pay0, Pay1,
     Pbx0, Pbx1, Pby0, Pby1,
@@ -20,8 +20,8 @@ load("castryck_decru_shortcut.sage")
 ) = map(int, sys.argv[1:])
 # fmt: on
 
-p = 2 ^ a * 3 ^ b - 1
-assert p in Primes()
+p = f * 2 ^ a * 3 ^ b - 1
+assert p in Primes(), f"Not prime: {f} * 2 ** {a} * 3 ** {b}"
 
 K, i = GF(p ^ 2, names="i", modulus=x ^ 2 + 1).objgen()
 
